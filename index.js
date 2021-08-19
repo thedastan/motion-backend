@@ -48,6 +48,9 @@ const start = async () => {
             useFindAndModify: false
         });
         app.listen(PORT, () => console.log(`SERVER HAS BEEN STARTED AT ${PORT}`));
+        app.get('/', (req, res) => {
+            res.sendFile(path.resolve(__dirname, 'index.html'));
+        });
 	} catch(e) {
 		console.log(e);
 	}
