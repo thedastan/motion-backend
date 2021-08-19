@@ -12,7 +12,7 @@ class AuthController{
         const { token } = req.cookies;
 		const info = await authService.refresh(token);
         if(info.isAuth){
-            res.cookie('token', info.tokens.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true, sameSite: 'None'});
+            res.cookie('token', info.tokens.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true, sameSite: 'None', secure: true});
             return res.status(200).json({
                 accessToken: info.tokens.accessToken
             });
@@ -38,7 +38,7 @@ class AuthController{
             }
             const tokens = tokenService.generateTokens({id: candidate._id});
             const saveToken = await tokenService.saveToken(candidate._id, tokens.refreshToken);
-            res.cookie('token', tokens.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true, sameSite: 'None'});
+            res.cookie('token', tokens.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true, sameSite: 'None', secure: true});
             return res.status(200).json({
                 accessToken: tokens.accessToken,
                 message: 'Вы успешно вошли в аккаунт'
