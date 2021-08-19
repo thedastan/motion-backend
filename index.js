@@ -36,10 +36,8 @@ app.use('/api/projects', projectRoute);
 app.use('/api/services', serviceRoute);
 app.use('/api/categories', categoryRoute);
 
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'index.html'));
-});
-app.listen(PORT, () => console.log(`SERVER HAS BEEN STARTED AT ${PORT}`));
+
+
 const start = async () => {
 	try {
 		await mongoose.connect(process.env.DB_URL, {
@@ -48,6 +46,7 @@ const start = async () => {
             useUnifiedTopology: true ,
             useFindAndModify: false
         })
+        app.listen(PORT, () => console.log(`SERVER HAS BEEN STARTED AT ${PORT}`));
 	} catch(e) {
 		console.log(e);
 	}
