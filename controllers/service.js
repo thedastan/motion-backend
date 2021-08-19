@@ -34,6 +34,11 @@ class ProjectController{
 	async getLastService(req, res){
 		try {
 			const service = await Service.findOne().sort({order: -1}).exec();
+			if(!service){
+				return res.json({
+					service: {order: 0}
+				})
+			}
 			return res.json({
 				service: service
 			});
