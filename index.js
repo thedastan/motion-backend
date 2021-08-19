@@ -4,7 +4,6 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, '.env'), silent: true});
 
 
 app.use(cors({
