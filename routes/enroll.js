@@ -51,7 +51,7 @@ router.post('/', async (req, res) => {
 
 	} catch (e) {
 		console.error(e)
-		return res.status(400).send(e)
+		return res.status(200).end()
 	} console.log(req.body)
 
 })
@@ -75,7 +75,7 @@ router.post('/reqs', async (req, res) => {
 
 	} catch (e) {
 		console.error(e)
-		return res.status(400).send(e)
+		return res.status(200).end()
 	} console.log(req.body)
 
 })
