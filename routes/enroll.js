@@ -58,7 +58,7 @@ router.post('/', async (req, res) => {
 router.post('/reqs', async (req, res) => {
 	try {
 		const token = "1912778515:AAEB8YA-DWf5FS6SIU9Gi5QHMpuBVsnoe3s";
-		const id = "547616062";
+		const id = "547616061";
 
 		const newZapis = [
 			`<b>Name: <i> ${req.body.name}</i></b>`,
