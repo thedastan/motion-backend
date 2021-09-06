@@ -48,11 +48,10 @@ router.post('/', async (req, res) => {
 		})
 
 		http.post(encodeURI(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${id}&parse_mode=html&text=${msg}`))
-
-	} catch (e) {
-		console.error(e)
 		return res.status(200).end()
-	} console.log(req.body)
+	} catch (e) {
+		return res.status(500).end()
+	} 
 
 })
 
@@ -72,11 +71,10 @@ router.post('/reqs', async (req, res) => {
 		})
 
 		http.post(encodeURI(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${id}&parse_mode=html&text=${msg}`))
-
-	} catch (e) {
-		console.error(e)
 		return res.status(200).end()
-	} console.log(req.body)
+	} catch (e) {
+		return res.status(500).end()
+	}
 
 })
 
