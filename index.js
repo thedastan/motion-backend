@@ -8,7 +8,7 @@ const path = require('path');
 
 app.use(cors({
     credentials:true,
-origin: "http://localhost:3000"
+origin: "https://motion-webllc.com"
 }));
 // origin: 'https://motion-webllc.com'
 app.use(cookieParser());
